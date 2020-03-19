@@ -1,0 +1,10 @@
+intents:
+  - chitchat
+
+responses:
+  utter_chitchat:
+  - text: "Damit konnte ich dir leider nicht helfen"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
