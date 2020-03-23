@@ -1,6 +1,9 @@
 importers:
   - name: "importer.chitchat_importer.ChitchatImporter"
-    param1: "val1"
+    per_story: 2
+    each_n: 2
+    shuffle: True
+    consultation: True
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
@@ -24,8 +27,7 @@ pipeline:
 # https://rasa.com/docs/rasa/core/policies/
 policies:
   - name: MemoizationPolicy
-  - name: TEDPolicy
+  - name: "policy.my_policy.ReTED"
     max_history: 5
     epochs: 100
   - name: MappingPolicy
-#  - name: "policy.my_policy.MyPolicy"

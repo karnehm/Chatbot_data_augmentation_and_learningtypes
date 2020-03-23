@@ -149,3 +149,21 @@ Ich konnte folgende Struktur im Training erkennen:
 5. Trainingsparameter ermitteln
 6. Modell Trainieren 
   In diesem Fall, da ich Keras verwende wird die Methode `fit` der Keras-Bibliothek aufgerufen und das Training durch diese Ausgeführt. Hier hat bei der Entwicklung des eigenen Ansatzes ein anderes Vorgehen zu erfolgen.
+  
+  
+# Importer
+
+Es ist möglich Storys beim Import zu Manipulieren. Standardmäßig wird die Klasse `RasaFileImporter` für das Importieren von Storys verwendet. Um mein Ziel zu erreichen Chit-Chat in die Storys einzufügen habe ich eine Klasse `ChitChatImporter` implementiert, welche die Basisklasse erweitert. 
+
+
+
+## Chitchat Dataset
+Microsoft stellt auf GitHub eine große Sammlung an Chitchat zur verfügung. Das kann noch etwas proprocessed werden und kann daraufhin genutzt werden. Die notwendigen Befehle folgend:
+
+```bash
+echo '## intent:chitchat' > <output_file>
+tail -n +2 <input_file>  | cut -f1 | sed -e 's/^/- /'  >> <output_file>
+```
+
+Quelle: [BotBuilder-PersonalityChat](https://github.com/Microsoft/BotBuilder-PersonalityChat/tree/master/CSharp/Datasets)
+

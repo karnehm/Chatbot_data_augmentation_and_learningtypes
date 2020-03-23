@@ -1,7 +1,11 @@
 import logging
 import re
+import asyncio
+import random
 from typing import Dict, List, Optional, Text, Union
 
+import asgiref as asgiref
+from asgiref.sync import async_to_sync
 from rasa.core.domain import Domain
 from rasa.core.events import Event, ActionExecuted, UserUttered
 from rasa.core.exceptions import StoryParseError
@@ -33,29 +37,21 @@ class ChitchatImporter(RasaFileImporter):
     """Default `TrainingFileImporter` implementation."""
 
     def __init__(
-        self,
-        config_file: Optional[Text] = None,
-        domain_path: Optional[Text] = None,
-        training_data_paths: Optional[Union[List[Text], Text]] = None,
+            self,
+            config_file: Optional[Text] = None,
+            domain_path: Optional[Text] = None,
+            training_data_paths: Optional[Union[List[Text], Text]] = None,
     ):
-        print('INIT')
         super().__init__(config_file, domain_path, training_data_paths)
 
-    async def get_config(self) -> Dict:
-        print('get_config')
-        config = await super().get_config()
-        return config
-
     async def get_stories(
-        self,
-        interpreter: "NaturalLanguageInterpreter" = RegexInterpreter(),
-        template_variables: Optional[Dict] = None,
-        use_e2e: bool = False,
-        exclusion_percentage: Optional[int] = None,
+            self,
+            interpreter: "NaturalLanguageInterpreter" = RegexInterpreter(),
+            template_variables: Optional[Dict] = None,
+            use_e2e: bool = False,
+            exclusion_percentage: Optional[int] = None,
     ) -> StoryGraph:
-        print('get_stories')
-        #stories = await super().get_stories(interpreter, template_variables, use_e2e, exclusion_percentage)
-        #return stories
+
         story_steps = await StoryFileReader.read_from_files(
             self._story_files,
             await self.get_domain(),
@@ -64,16 +60,17 @@ class ChitchatImporter(RasaFileImporter):
             use_e2e,
             exclusion_percentage,
         )
-        reader = StoryFileReader(interpreter, await self.get_domain(), template_variables, use_e2e)
         story_steps_copy = story_steps.copy()
-        for story in story_steps:
-            indexes = get_possible_indexes(story)
-            story = await self.add_chitchat_to_story(story.create_copy(True), await self.get_domain(), [0, 3], interpreter)
-            story_steps_copy.append(story)
+
+        for copy_nr in range(await self.get_param('copys_per_story', 1)):
+            indexes = await self.get_indexes(story_steps, copy_nr)
+            for idx, story in enumerate(story_steps):
+                story = await self.add_chitchat_to_story(story.create_copy(True), await self.get_domain(), indexes[idx],
+                                                         interpreter)
+                story_steps_copy.append(story)
         return StoryGraph(story_steps_copy)
 
     async def get_nlu_data(self, language: Optional[Text] = "en") -> TrainingData:
-        print('get_nlu_data')
         nlu = await super().get_nlu_data(language)
         path = set()
         path.add('data/chitchat_nlu.md')
@@ -94,9 +91,13 @@ class ChitchatImporter(RasaFileImporter):
                                     interpreter: "NaturalLanguageInterpreter" = RegexInterpreter()):
         # Delete Indexes, if they greater then the length of the story or lower 0
         indexes = sorted(set(indexes))
-        regex = re.compile('')
         indexes = [i for i in indexes if i >= 0 and i < len(story.events)]
         for index in indexes:
+            # get last Utter
+            last_utter = None
+            if index - 1 >= 0:
+                last_utter = story.events[index - 1]
+
             # Intent
             intent = 'chitchat'
             parse_data = await interpreter.parse(intent)
@@ -136,4 +137,35 @@ class ChitchatImporter(RasaFileImporter):
                 story.events.insert(index, parsed_event)
                 index += 1
 
+            if last_utter and await self.get_param('consultation', False):
+                story.events.insert(index, last_utter)
         return story
+
+    async def get_indexes(self, storys, copy_nr):
+        indexes = []
+
+        per_story = await self.get_param('per_story')
+        each_n = await self.get_param('each_n', 1)
+        shuffle = await self.get_param('shuffle', False)
+
+        random.seed(4)
+        for story in storys:
+            story_indexes = get_possible_indexes(story)
+
+            story_indexes = [i for idx, i in enumerate(story_indexes)
+                             if (idx + 1 + copy_nr) % each_n == 0]
+
+            # Shuffle, if config set True
+            if shuffle:
+                random.shuffle(story_indexes)
+            story_indexes = story_indexes[:per_story]
+            indexes.append(story_indexes)
+        return indexes
+
+    async def get_param(self, param, default=None):
+        config = await super().get_config()
+        config = config["importers"]
+        for c in config:
+            if "ChitchatImporter" in c["name"] and param in c:
+                return c['each_n']
+        return default

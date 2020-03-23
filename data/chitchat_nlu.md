@@ -1,4 +1,52 @@
 ## intent:chitchat
-- Wie ist das Wetter
-- Du bist doof
-- Was willst du tun 
+- Lost the election because your speech was too boring
+- This is so dull
+- This is so uninteresting
+- U basic
+- Ugh so boring
+- Ugh, so dull
+- Ur basic
+- Ur blah
+- Ur gonna bore me to death
+- Ur so boring
+- Wake me up when you have something interesting to say
+- Watching paint dry is more entertaining than talking to you
+- Are you trying to be dull?
+- This is not fun
+- Fun fact: you are boring
+- Are you trying to bore me?
+- Basic af 
+- Be more fun 
+- Boring
+- Boring af
+- Can you be less boring?
+- Can you be less dull?
+- Cool story, bro
+- Could you be any less entertaining? 
+- Could you be any less exciting? 
+- Could you be any less interesting? 
+- So dull
+- Did you know that you're boring?
+- Why are you so boring? 
+- Getting tired of you 
+- Good lord you are dull
+- Holy crap you are boring
+- I am amazed that you are so boring
+- I am not enjoying this boring conversation
+- I couldn't be more bored with you
+- I'm falling asleep here
+- I'm not surprised that you are boring
+- I'm so bored of you
+- I'm so tired of you
+- I'm tired of you 
+- Listening to you is like listening to a Ted Talk from the color Beige
+- Could you be any more boring? 
+- You're so blah
+- Were you made to be this boring?
+- You're not entertaining
+- You're not exciting
+- You're not interesting
+- You're not very entertaining.
+- You're not very exciting.
+- You're pretty boring
+- You're pretty uneventful
