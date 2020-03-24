@@ -4,6 +4,8 @@ importers:
     each_n: 2
     shuffle: True
     consultation: True
+    nlu_data_file: 'data/chitchat_nlu.md'
+    domain_data_file: 'data/chitchat_domain.yml'
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/

@@ -1,6 +1,4 @@
 import logging
-import re
-import asyncio
 import random
 from typing import Dict, List, Optional, Text, Union
 
@@ -73,14 +71,14 @@ class ChitchatImporter(RasaFileImporter):
     async def get_nlu_data(self, language: Optional[Text] = "en") -> TrainingData:
         nlu = await super().get_nlu_data(language)
         path = set()
-        path.add('data/chitchat_nlu.md')
+        path.add(await self.get_param('nlu_data_file'))
         chitchat_nlu = utils.training_data_from_paths(path, language)
         nlu = nlu.merge(chitchat_nlu)
         return nlu
 
     async def get_domain(self) -> Domain:
         domain = await super().get_domain()
-        chitchat_domain = Domain.from_file('data/chitchat_domain.yml')
+        chitchat_domain = Domain.from_file(await self.get_param('domain_data_file'))
         domain = domain.merge(chitchat_domain, False)
         return domain
 
