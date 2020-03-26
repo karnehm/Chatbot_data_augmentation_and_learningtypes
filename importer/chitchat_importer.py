@@ -1,9 +1,8 @@
+import asyncio
 import logging
 import random
 from typing import Dict, List, Optional, Text, Union
 
-import asgiref as asgiref
-from asgiref.sync import async_to_sync
 from rasa.core.domain import Domain
 from rasa.core.events import Event, ActionExecuted, UserUttered
 from rasa.core.exceptions import StoryParseError
@@ -61,7 +60,7 @@ class ChitchatImporter(RasaFileImporter):
         story_steps_copy = story_steps.copy()
 
         for copy_nr in range(await self.get_param('copys_per_story', 1)):
-            indexes = await self.get_indexes(story_steps, copy_nr)
+            indexes = self.get_indexes(story_steps, copy_nr)
             for idx, story in enumerate(story_steps):
                 story = await self.add_chitchat_to_story(story.create_copy(True), await self.get_domain(), indexes[idx],
                                                          interpreter)
@@ -71,14 +70,14 @@ class ChitchatImporter(RasaFileImporter):
     async def get_nlu_data(self, language: Optional[Text] = "en") -> TrainingData:
         nlu = await super().get_nlu_data(language)
         path = set()
-        path.add(await self.get_param('nlu_data_file'))
+        path.add("data/chitchat_nlu.md")
         chitchat_nlu = utils.training_data_from_paths(path, language)
         nlu = nlu.merge(chitchat_nlu)
         return nlu
 
     async def get_domain(self) -> Domain:
         domain = await super().get_domain()
-        chitchat_domain = Domain.from_file(await self.get_param('domain_data_file'))
+        chitchat_domain = Domain.from_file("data/chitchat_domain.yml")
         domain = domain.merge(chitchat_domain, False)
         return domain
 
