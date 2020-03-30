@@ -56,14 +56,14 @@ class SingleChitchatImporter(RasaFileImporter):
     async def get_nlu_data(self, language: Optional[Text] = "en") -> TrainingData:
         nlu = await super().get_nlu_data(language)
         path = set()
-        path.add("data/chitchat_nlu.md")
+        path.add(self.helper.get_param("nlu_data_file","data/chitchat_nlu.md"))
         chitchat_nlu = utils.training_data_from_paths(path, language)
         nlu = nlu.merge(chitchat_nlu)
         return nlu
 
     async def get_domain(self) -> Domain:
         domain = await super().get_domain()
-        chitchat_domain = Domain.from_file("data/chitchat_domain.yml")
+        chitchat_domain = Domain.from_file(self.helper.get_param("domain_data_file", "data/chitchat_domain.yml"))
         domain = domain.merge(chitchat_domain, False)
         return domain
 
