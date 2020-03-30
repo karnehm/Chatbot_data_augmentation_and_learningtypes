@@ -1,6 +1,3 @@
-import asyncio
-import logging
-import random
 from typing import Dict, List, Optional, Text, Union
 
 from rasa.core.domain import Domain
@@ -14,23 +11,10 @@ from rasa.importers.rasa import RasaFileImporter
 from rasa.nlu.training_data import TrainingData
 from rasa.utils.common import raise_warning
 
-logger = logging.getLogger(__name__)
+from importer.helper import ImportHelper
 
 
-def get_possible_indexes(story) -> List:
-    indexes = []
-    last_datatype = None
-    current_index = 0
-    for event in story.events:
-        current_datatype = type(event)
-        if current_datatype != last_datatype and current_datatype == UserUttered:
-            indexes.append(current_index)
-        last_datatype = type(event)
-        current_index += 1
-    return indexes
-
-
-class ChitchatImporter(RasaFileImporter):
+class SingleChitchatImporter(RasaFileImporter):
     """Default `TrainingFileImporter` implementation."""
 
     def __init__(
@@ -40,6 +24,7 @@ class ChitchatImporter(RasaFileImporter):
             training_data_paths: Optional[Union[List[Text], Text]] = None,
     ):
         super().__init__(config_file, domain_path, training_data_paths)
+        self.helper = ImportHelper(type(self).__name__, self.config)
 
     async def get_stories(
             self,
@@ -49,9 +34,10 @@ class ChitchatImporter(RasaFileImporter):
             exclusion_percentage: Optional[int] = None,
     ) -> StoryGraph:
 
+        domain = await self.get_domain()
         story_steps = await StoryFileReader.read_from_files(
             self._story_files,
-            await self.get_domain(),
+            domain,
             interpreter,
             template_variables,
             use_e2e,
@@ -59,10 +45,10 @@ class ChitchatImporter(RasaFileImporter):
         )
         story_steps_copy = story_steps.copy()
 
-        for copy_nr in range(await self.get_param('copys_per_story', 1)):
-            indexes = self.get_indexes(story_steps, copy_nr)
+        for copy_nr in range(self.helper.get_param('copys_per_story', 1)):
+            indexes = self.helper.get_indexes(story_steps, copy_nr)
             for idx, story in enumerate(story_steps):
-                story = await self.add_chitchat_to_story(story.create_copy(True), await self.get_domain(), indexes[idx],
+                story = await self.add_chitchat_to_story(story.create_copy(True), domain, indexes[idx],
                                                          interpreter)
                 story_steps_copy.append(story)
         return StoryGraph(story_steps_copy)
@@ -134,35 +120,7 @@ class ChitchatImporter(RasaFileImporter):
                 story.events.insert(index, parsed_event)
                 index += 1
 
-            if last_utter and await self.get_param('consultation', False):
+            if last_utter and self.helper.get_param('consultation', False):
                 story.events.insert(index, last_utter)
         return story
 
-    async def get_indexes(self, storys, copy_nr):
-        indexes = []
-
-        per_story = await self.get_param('per_story')
-        each_n = await self.get_param('each_n', 1)
-        shuffle = await self.get_param('shuffle', False)
-
-        random.seed(4)
-        for story in storys:
-            story_indexes = get_possible_indexes(story)
-
-            story_indexes = [i for idx, i in enumerate(story_indexes)
-                             if (idx + 1 + copy_nr) % each_n == 0]
-
-            # Shuffle, if config set True
-            if shuffle:
-                random.shuffle(story_indexes)
-            story_indexes = story_indexes[:per_story]
-            indexes.append(story_indexes)
-        return indexes
-
-    async def get_param(self, param, default=None):
-        config = await super().get_config()
-        config = config["importers"]
-        for c in config:
-            if "ChitchatImporter" in c["name"] and param in c:
-                return c['each_n']
-        return default

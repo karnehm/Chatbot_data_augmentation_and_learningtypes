@@ -1,5 +1,5 @@
 importers:
-  - name: "importer.chitchat_importer.ChitchatImporter"
+  - name: "importer.single_chitchat_importer.SingleChitchatImporter"
     per_story: 2
     each_n: 2
     shuffle: True
