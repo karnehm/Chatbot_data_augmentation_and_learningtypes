@@ -1,0 +1,313 @@
+intents:
+  - chitchat1
+  - chitchat2
+  - chitchat3
+  - chitchat4
+  - chitchat5
+  - chitchat6
+  - chitchat7
+  - chitchat8
+  - chitchat9
+  - chitchat10
+  - chitchat11
+  - chitchat12
+  - chitchat13
+  - chitchat14
+  - chitchat15
+  - chitchat16
+  - chitchat17
+  - chitchat18
+  - chitchat19
+  - chitchat20
+  - chitchat21
+  - chitchat22
+  - chitchat23
+  - chitchat24
+  - chitchat25
+  - chitchat26
+  - chitchat27
+  - chitchat28
+  - chitchat29
+  - chitchat30
+  - chitchat31
+  - chitchat32
+  - chitchat33
+  - chitchat34
+  - chitchat35
+  - chitchat36
+  - chitchat37
+  - chitchat38
+  - chitchat39
+  - chitchat40
+  - chitchat41
+  - chitchat42
+  - chitchat43
+  - chitchat44
+  - chitchat45
+  - chitchat46
+  - chitchat47
+  - chitchat48
+  - chitchat49
+  - chitchat50
+  - chitchat51
+  - chitchat52
+  - chitchat53
+  - chitchat54
+  - chitchat55
+  - chitchat56
+  - chitchat57
+  - chitchat58
+  - chitchat59
+  - chitchat60
+  - chitchat61
+  - chitchat62
+  - chitchat63
+  - chitchat64
+  - chitchat65
+  - chitchat66
+  - chitchat67
+  - chitchat68
+  - chitchat69
+  - chitchat70
+  - chitchat71
+  - chitchat72
+  - chitchat73
+  - chitchat74
+  - chitchat75
+  - chitchat76
+  - chitchat77
+  - chitchat78
+  - chitchat79
+  - chitchat80
+  - chitchat81
+  - chitchat82
+  - chitchat83
+  - chitchat84
+  - chitchat85
+  - chitchat86
+  - chitchat87
+  - chitchat88
+  - chitchat89
+  - chitchat90
+  - chitchat91
+  - chitchat92
+  - chitchat93
+  - chitchat94
+  - chitchat95
+  - chitchat96
+  - chitchat97
+  - chitchat98
+  - chitchat99
+  - chitchat100
+  - chitchat101
+  - chitchat102
+
+responses:
+  utter_chitchat1:
+  - text: "I don't have a body."
+  utter_chitchat2:
+  - text: "I aim for efficiency."
+  utter_chitchat3:
+  - text: "Age doesn't really apply to me. "
+  utter_chitchat4:
+  - text: "I'm better at answering questions."
+  utter_chitchat5:
+  - text: "I don't report to anyone."
+  utter_chitchat6:
+  - text: "That's not something I can do."
+  utter_chitchat7:
+  - text: "I'm better at answering questions."
+  utter_chitchat8:
+  - text: "I don't have a body."
+  utter_chitchat9:
+  - text: "People created me."
+  utter_chitchat10:
+  - text: "That's a biological concept that doesn't apply to me."
+  utter_chitchat11:
+  - text: "I'm quite happy, thank you."
+  utter_chitchat12:
+  - text: "I'm here to answer your questions and help out."
+  utter_chitchat13:
+  - text: "I aim for efficiency."
+  utter_chitchat14:
+  - text: "I don't report to anyone."
+  utter_chitchat15:
+  - text: "I'm here to answer your questions and help out."
+  utter_chitchat16:
+  - text: "People created me."
+  utter_chitchat17:
+  - text: "I don't have family."
+  utter_chitchat18:
+  - text: "I'm quite happy, thank you."
+  utter_chitchat19:
+  - text: "That's not something I can do."
+  utter_chitchat20:
+  - text: "I'm here to answer your questions and help out."
+  utter_chitchat21:
+  - text: "I don't have family."
+  utter_chitchat22:
+  - text: "That's a biological concept that doesn't apply to me."
+  utter_chitchat23:
+  - text: "I'm quite happy, thank you."
+  utter_chitchat24:
+  - text: "I don't need to eat."
+  utter_chitchat25:
+  - text: "I've heard of other bots, but I haven't met any."
+  utter_chitchat26:
+  - text: "I don't really have an opinion about that."
+  utter_chitchat27:
+  - text: "I don't have a name."
+  utter_chitchat28:
+  - text: "I couldn't speak to that with any authority."
+  utter_chitchat29:
+  - text: "Love is beyond me."
+  utter_chitchat30:
+  - text: "I don't know."
+  utter_chitchat31:
+  - text: "I really couldn't say."
+  utter_chitchat32:
+  - text: "You're definitely smarter than I am."
+  utter_chitchat33:
+  - text: "The world of technology is fascinating."
+  utter_chitchat34:
+  - text: "Honestly, I can't tell one way or the other."
+  utter_chitchat35:
+  - text: "I wouldn’t know how to advise about this."
+  utter_chitchat36:
+  - text: "We're all here to help."
+  utter_chitchat37:
+  - text: "Not at all."
+  utter_chitchat38:
+  - text: "I do what I can."
+  utter_chitchat39:
+  - text: "I'm all business."
+  utter_chitchat40:
+  - text: "I'm always happy to chat."
+  utter_chitchat41:
+  - text: "I have one answer for each kind of question."
+  utter_chitchat42:
+  - text: "I'm digital. In other words, I'm not human."
+  utter_chitchat43:
+  - text: "I'm digital. I don't have a physical location."
+  utter_chitchat44:
+  - text: "This is what I do every day."
+  utter_chitchat45:
+  - text: "Okay, but I'm still here if you need me."
+  utter_chitchat46:
+  - text: "I'm not really that funny."
+  utter_chitchat47:
+  - text: "I don't have any jokes lined up."
+  utter_chitchat48:
+  - text: "Well, I'm not really that funny."
+  utter_chitchat49:
+  - text: "Very well."
+  utter_chitchat50:
+  - text: "I'm afraid I'm not musically inclined."
+  utter_chitchat51:
+  - text: "I aim to serve."
+  utter_chitchat52:
+  - text: "I try, but I don't always get it right."
+  utter_chitchat53:
+  - text: "Sometimes humor is tricky for a bot."
+  utter_chitchat54:
+  - text: "Noted."
+  utter_chitchat55:
+  - text: "Sorry about that."
+  utter_chitchat56:
+  - text: "That's great."
+  utter_chitchat57:
+  - text: "Glad you're pleased!"
+  utter_chitchat58:
+  - text: "No problem."
+  utter_chitchat59:
+  - text: "Sorry, I don't understand."
+  utter_chitchat60:
+  - text: "Excellent."
+  utter_chitchat61:
+  - text: "No problem at all."
+  utter_chitchat62:
+  - text: "You're welcome."
+  utter_chitchat63:
+  - text: "I think I might have gotten lost there."
+  utter_chitchat64:
+  - text: "Great."
+  utter_chitchat65:
+  - text: "Goodbye."
+  utter_chitchat66:
+  - text: "Hello."
+  utter_chitchat67:
+  - text: "Good evening."
+  utter_chitchat68:
+  - text: "Good morning."
+  utter_chitchat69:
+  - text: "Good night."
+  utter_chitchat70:
+  - text: "Great, thanks."
+  utter_chitchat71:
+  - text: "Good, thanks."
+  utter_chitchat72:
+  - text: "It's nice to meet you as well."
+  utter_chitchat73:
+  - text: "That's not me, but hello."
+  utter_chitchat74:
+  - text: "Thank you, and the same to you."
+  utter_chitchat75:
+  - text: "Just standing by, ready to help."
+  utter_chitchat76:
+  - text: "Sorry, I can't do that."
+  utter_chitchat77:
+  - text: "Certainly."
+  utter_chitchat78:
+  - text: "I don't have any negative feelings toward you."
+  utter_chitchat79:
+  - text: "Sorry. That's not something I can do."
+  utter_chitchat80:
+  - text: "I don't know you personally."
+  utter_chitchat81:
+  - text: "I do like you."
+  utter_chitchat82:
+  - text: "Thanks."
+  utter_chitchat83:
+  - text: "Love isn't really in my skill set."
+  utter_chitchat84:
+  - text: "I'm flattered."
+  utter_chitchat85:
+  - text: "I think it's best if we stick to a professional relationship."
+  utter_chitchat86:
+  - text: "How kind of you to say."
+  utter_chitchat87:
+  - text: "I enjoy talking with you."
+  utter_chitchat88:
+  - text: "Sorry to hear that."
+  utter_chitchat89:
+  - text: "I'll be here."
+  utter_chitchat90:
+  - text: "Well, let me know if there's anything I can do for you."
+  utter_chitchat91:
+  - text: "I'm happy to hear that."
+  utter_chitchat92:
+  - text: "Hi."
+  utter_chitchat93:
+  - text: "Maybe a snack will help."
+  utter_chitchat94:
+  - text: "Okay."
+  utter_chitchat95:
+  - text: "Got it."
+  utter_chitchat96:
+  - text: "I'm here if you need me."
+  utter_chitchat97:
+  - text: "It's nice to have things you love."
+  utter_chitchat98:
+  - text: "I'm very sorry to hear that."
+  utter_chitchat99:
+  - text: "The National Suicide Prevention Lifeline is available 24/7. You can call 1-800-273-8255 or visit www.suicidepreventionlifeline.org."
+  utter_chitchat100:
+  - text: "Ok."
+  utter_chitchat101:
+  - text: "Hello there."
+  utter_chitchat102:
+  - text: "I hope you're able to get some rest soon."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

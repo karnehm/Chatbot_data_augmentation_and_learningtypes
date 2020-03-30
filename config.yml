@@ -1,11 +1,19 @@
 importers:
-  - name: "importer.single_chitchat_importer.SingleChitchatImporter"
-    per_story: 2
-    each_n: 2
+  - name: "importer.multi_chitchat_importer.MultiChitchatImporter"
+    per_story: 10
+    each_n: 1
     shuffle: True
     consultation: True
-    nlu_data_file: "data/chitchat_nlu.md"
-    domain_data_file: "data/chitchat_domain.yml"
+    nlu_data_file: "data/multi_chitchat_nlu.md"
+    domain_data_file: "data/multi_chitchat_domain.yml"
+
+#  - name: "importer.single_chitchat_importer.SingleChitchatImporter"
+#    per_story: 2
+#    each_n: 2
+#    shuffle: True
+#    consultation: True
+#    nlu_data_file: "data/chitchat_nlu.md"
+#    domain_data_file: "data/chitchat_domain.yml"
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/

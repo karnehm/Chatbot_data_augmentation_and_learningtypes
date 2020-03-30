@@ -1,4 +1,4 @@
-from random import random
+import random
 from typing import List
 
 from rasa.core.events import UserUttered
@@ -10,7 +10,7 @@ def get_possible_indexes(story) -> List:
     current_index = 0
     for event in story.events:
         current_datatype = type(event)
-        if current_datatype != last_datatype and current_datatype == UserUttered():
+        if current_datatype != last_datatype and current_datatype == UserUttered:
             indexes.append(current_index)
         last_datatype = type(event)
         current_index += 1
