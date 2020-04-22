@@ -5,7 +5,6 @@ intents:
 entities:
   - attraction_area
   - attraction_name
-  - attraction_status
   - attraction_type
   - hotel_area
   - hotel_day
@@ -15,7 +14,6 @@ entities:
   - hotel_pricerange
   - hotel_reference
   - hotel_stars
-  - hotel_status
   - hotel_type
   - restaurant_area
   - restaurant_day
@@ -23,12 +21,10 @@ entities:
   - restaurant_name
   - restaurant_pricerange
   - restaurant_reference
-  - restaurant_status
   - restaurant_time
   - taxi_departure
   - taxi_destination
   - taxi_leaveAt
-  - taxi_status
   - taxi_type
   - train_arriveBy
   - train_day
@@ -36,7 +32,6 @@ entities:
   - train_destination
   - train_leaveAt
   - train_reference
-  - train_status
   - train_trainID
 
 actions:
@@ -198,13 +193,6 @@ slots:
     values:
     - dontcare
     - specific
-  attraction_status:
-    type: categorical
-    values:
-    - NA
-    - available
-    - booked
-    - unique
   attraction_type:
     type: categorical
     values:
@@ -241,13 +229,6 @@ slots:
     type: text
   hotel_stars:
     type: text
-  hotel_status:
-    type: categorical
-    values:
-    - NA
-    - available
-    - booked
-    - unique
   hotel_type:
     type: categorical
     values:
@@ -277,13 +258,6 @@ slots:
     - specific
   restaurant_reference:
     type: text
-  restaurant_status:
-    type: categorical
-    values:
-    - NA
-    - available
-    - booked
-    - unique
   restaurant_time:
     type: text
   taxi_departure:
@@ -295,12 +269,6 @@ slots:
     values:
     - dontcare
     - specific
-  taxi_status:
-    type: categorical
-    values:
-    - available
-    - booked
-    - unique
   taxi_type:
     type: text
   train_arriveBy:
@@ -318,12 +286,5 @@ slots:
     type: text
   train_reference:
     type: text
-  train_status:
-    type: categorical
-    values:
-    - NA
-    - available
-    - booked
-    - unique
   train_trainID:
     type: text
