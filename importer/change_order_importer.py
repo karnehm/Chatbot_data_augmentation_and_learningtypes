@@ -1,15 +1,16 @@
 import random
-from typing import Dict, List, Optional, Text, Union
+from typing import Optional, Text, Union, List, Dict
 
-from rasa.core.interpreter import NaturalLanguageInterpreter, RegexInterpreter
+
+from rasa.core.interpreter import RegexInterpreter
+from rasa.core.training.structures import StoryGraph, StoryStep
 from rasa.core.training.dsl import StoryFileReader
-from rasa.core.training.structures import StoryGraph
 from rasa.importers.rasa import RasaFileImporter
 
-from importer.helper import get_possible_indexes, draw_graph, get_event_name, create_matrix_structur
+from importer.helper import get_possible_indexes
 
 
-class StructurChangeImporter(RasaFileImporter):
+class ChangeOrderImporter(RasaFileImporter):
     """Default `TrainingFileImporter` implementation."""
 
     def __init__(
@@ -39,8 +40,6 @@ class StructurChangeImporter(RasaFileImporter):
             use_e2e,
             exclusion_percentage,
         )
-
-        distance_matrix = self.get_pairs(domain, story_steps, 1, 5)
         copy_story_steps = story_steps.copy()
 
         for story in story_steps:

@@ -1,12 +1,8 @@
-#importers:
-#  - name: "importer.single_chitchat_importer.SingleChitchatImporter"
-#    per_story: 10
-#    each_n: 1
-#    shuffle: True
-#    consultation: True
-#    nlu_data_file: "data/chitchat_nlu.md"
-#    domain_data_file: "data/chitchat_domain.yml"
-
+importers:
+#  - name: "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter"
+#    multiplication: 3
+#    average_length: 20
+  - name: "importer.change_order_importer.ChangeOrderImporter"
 #  - name: "importer.single_chitchat_importer.SingleChitchatImporter"
 #    per_story: 2
 #    each_n: 2

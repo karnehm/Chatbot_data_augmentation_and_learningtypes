@@ -60,7 +60,11 @@ class MultiChitchatImporter(RasaFileImporter):
             use_e2e,
             exclusion_percentage,
         )
-        story_steps_copy = story_steps.copy()
+
+        story_steps_copy = []
+        if(self.helper.get_param('add_original_storys', False)):
+            story_steps_copy = story_steps.copy()
+
 
         for copy_nr in range(self.helper.get_param('copys_per_story', 1)):
             indexes = self.helper.get_indexes(story_steps, copy_nr)

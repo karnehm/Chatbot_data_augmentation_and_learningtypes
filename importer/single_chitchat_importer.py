@@ -55,12 +55,6 @@ class SingleChitchatImporter(RasaFileImporter):
         return StoryGraph(story_steps_copy)
 
     async def get_nlu_data(self, language: Optional[Text] = "en") -> TrainingData:
-        #nlu = await super().get_nlu_data(language)
-        #path = set()
-        #path.add(self.helper.get_param("nlu_data_file","data/chitchat_nlu.md"))
-        #chitchat_nlu = utils.training_data_from_paths(path, language)
-        #nlu = nlu.merge(chitchat_nlu)
-        #return nlu
         return await super().get_nlu_data(language)
 
     async def get_domain(self) -> Domain:
