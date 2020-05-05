@@ -1,2 +1,5 @@
 /models
 /.idea
+/runs
+/venv
+/results

@@ -37,12 +37,20 @@ intents:
   - request_hotel
   - inform
   - request_info
+  - taxi_status
+  - taxi_type
+  - inform_taxi
+  - reqmore_general
+  - request_train
+  - inform_train
+  - request_taxi
   - about
   - affirm
   - correct
   - chitchat
   - explain
   - did_that_work
+  - bye
 
 entities:
   - location
@@ -178,3 +186,4 @@ actions:
   - utter_more_info_restaurant
   - action_search_restaurant
   - action_search_hotel
+  - action_book_taxi
