@@ -23,11 +23,16 @@ res_dir=./results/$(date '+%Y%m%d_%H%M')$NAME
 res_file=$res_dir/test_result.txt
 train_file=$res_dir/train_result.txt
 mkdir $res_dir
+printf "Run with configurations\n\nDomain: $DOMAIN\nConfig: $CONFIG\nTrain-Data: $TRAIN\nTest-Data: $TEST\nName: $NAME" > $res_dir/input_values.txt
 cp $CONFIG ./results/$(date '+%Y%m%d_%H%M')$NAME/
 printf "Start Train\n"
 rasa train --data $TRAIN -c $CONFIG -d $DOMAIN --out $res_dir
 printf "Start Test\n"
-rasa test -s $TEST -c $CONFIG  -m $res_dir > $res_file 2>&1
-rasa test -s $TEST -c $CONFIG -m $res_dir > $train_file 2>&1
+rasa test core -s $TEST -m $res_dir --out $res_dir > $res_file 2>&1
+grep -v '%' $res_file | grep -v ' 0 ' | grep -v 'rasa' > $res_dir/tmp 2>&1
+mv $res_dir/tmp $res_file
+rasa test core -s $TRAIN -m $res_dir > $train_file 2>&1
+grep -v '%' $train_file | grep -v ' 0 ' | grep -v 'rasa' > $res_dir/tmp 2>&1
+mv $res_dir/tmp $train_file
 printf "Test finished"
 

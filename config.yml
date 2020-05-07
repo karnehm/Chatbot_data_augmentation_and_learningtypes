@@ -1,15 +1,8 @@
 importers:
-#  - name: "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter"
-#    multiplication: 3
-#    average_length: 20
-  - name: "importer.change_order_importer.ChangeOrderImporter"
-#  - name: "importer.single_chitchat_importer.SingleChitchatImporter"
-#    per_story: 2
-#    each_n: 2
-#    shuffle: True
-#    consultation: True
-#    nlu_data_file: "data/chitchat_nlu.md"
-#    domain_data_file: "data/chitchat_domain.yml"
+  - name: "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter"
+    multiplication: 1
+    average_length: 15
+    random_switch: 35
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
@@ -33,7 +26,7 @@ pipeline:
 # https://rasa.com/docs/rasa/core/policies/
 policies:
   - name: MemoizationPolicy
-  - name: TEDPolicy
+  - name: KerasPolicy
     max_history: 5
     epochs: 100
   - name: MappingPolicy

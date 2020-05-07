@@ -44,15 +44,22 @@ class CreateNewDialogesByGraphImporter(RasaFileImporter):
         )
         story_file_reader = StoryFileReader(interpreter, domain, template_variables, use_e2e)
         self.graph = get_graph(domain, story_steps)
+
+
         number_of_storys = len(story_steps) * self.helper.get_param('multiplication', 1)
         probability_of_termination = self.helper.get_param('average_length', 10) ** -1
+        probability_of_random_switch = self.helper.get_param('random_switch', 0) * 0.01
+
         for story_number in range(number_of_storys):
-            events = []
             interactions = get_all_interactions(domain)
             current_interaction = random.choice(interactions)
             end_of_story = False
             story_steps_lines = ['## Random Story ' + str(int (random.random() * 10000))]
             while random.random() >= probability_of_termination and not end_of_story:
+
+                if random.random() >= probability_of_random_switch:
+                    current_interaction = random.choice(interactions)
+
                 # create and add current Event
                 if current_interaction in domain.action_names:
                     story_steps_lines.append('- ' + current_interaction)

@@ -1,0 +1,728 @@
+{
+  "keras_new_dialoges_multi_1_avg_15_ran_0": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 1,
+        "average_length": 15,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_1_avg_20_ran_0": {
+    "importer":{
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 1,
+        "average_length": 20,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      }, {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history" : 5,
+          "epochs": 100
+        }
+      }, {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [{
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }, {
+      "name": "embedding",
+      "domain": "embedding_domain.yml",
+      "train": "data/embedding_paper/train",
+      "test": "data/embedding_paper/test"
+    }]
+  },
+  "keras_new_dialoges_multi_1_avg_25_ran_0": {
+      "importer":{
+        "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+        "param": {
+          "multiplication": 1,
+          "average_length": 25,
+          "random_switch": 0
+        }
+      },
+      "policy": [
+        {
+          "name": "MemoizationPolicy"
+        }, {
+          "name": "KerasPolicy",
+          "param": {
+            "max_history" : 5,
+            "epochs": 100
+          }
+        }, {
+          "name": "MappingPolicy"
+        }
+      ],
+      "data": [{
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }, {
+        "name": "embedding",
+        "domain": "embedding_domain.yml",
+        "train": "data/embedding_paper/train",
+        "test": "data/embedding_paper/test"
+      }]
+    },
+  "keras_new_dialoges_multi_1_avg_30_ran_0": {
+      "importer":{
+        "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+        "param": {
+          "multiplication": 1,
+          "average_length": 30,
+          "random_switch": 0
+        }
+      },
+      "policy": [
+        {
+          "name": "MemoizationPolicy"
+        }, {
+          "name": "KerasPolicy",
+          "param": {
+            "max_history" : 5,
+            "epochs": 100
+          }
+        }, {
+          "name": "MappingPolicy"
+        }
+      ],
+      "data": [{
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }, {
+        "name": "embedding",
+        "domain": "embedding_domain.yml",
+        "train": "data/embedding_paper/train",
+        "test": "data/embedding_paper/test"
+      }]
+    },
+  "keras_new_dialoges_multi_2_avg_15_ran_0": {
+    "importer":{
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 2,
+        "average_length": 15,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      }, {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history" : 5,
+          "epochs": 100
+        }
+      }, {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [{
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }, {
+      "name": "embedding",
+      "domain": "embedding_domain.yml",
+      "train": "data/embedding_paper/train",
+      "test": "data/embedding_paper/test"
+    }]
+  },
+  "keras_new_dialoges_multi_2_avg_20_ran_0": {
+    "importer":{
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 2,
+        "average_length": 20,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      }, {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history" : 5,
+          "epochs": 100
+        }
+      }, {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [{
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }, {
+      "name": "embedding",
+      "domain": "embedding_domain.yml",
+      "train": "data/embedding_paper/train",
+      "test": "data/embedding_paper/test"
+    }]
+  },
+  "keras_new_dialoges_multi_2_avg_25_ran_0": {
+    "importer":{
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 2,
+        "average_length": 25,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      }, {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history" : 5,
+          "epochs": 100
+        }
+      }, {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [{
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }, {
+      "name": "embedding",
+      "domain": "embedding_domain.yml",
+      "train": "data/embedding_paper/train",
+      "test": "data/embedding_paper/test"
+    }]
+  },
+  "keras_new_dialoges_multi_2_avg_30_ran_0": {
+    "importer":{
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 2,
+        "average_length": 30,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      }, {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history" : 5,
+          "epochs": 100
+        }
+      }, {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [{
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }, {
+      "name": "embedding",
+      "domain": "embedding_domain.yml",
+      "train": "data/embedding_paper/train",
+      "test": "data/embedding_paper/test"
+    }]
+  },
+  "keras_new_dialoges_multi_3_avg_15_ran_0": {
+  "importer": {
+    "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+    "param": {
+      "multiplication": 3,
+      "average_length": 15,
+      "random_switch": 0
+    }
+  },
+  "policy": [
+    {
+      "name": "MemoizationPolicy"
+    },
+    {
+      "name": "KerasPolicy",
+      "param": {
+        "max_history": 5,
+        "epochs": 100
+      }
+    },
+    {
+      "name": "MappingPolicy"
+    }
+  ],
+  "data": [
+    {
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }
+  ]
+},
+  "keras_new_dialoges_multi_3_avg_20_ran_0": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 3,
+        "average_length": 20,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_3_avg_25_ran_0": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 3,
+        "average_length": 25,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_3_avg_30_ran_0": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 3,
+        "average_length": 30,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_4_avg_15_ran_0": {
+  "importer": {
+    "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+    "param": {
+      "multiplication": 4,
+      "average_length": 15,
+      "random_switch": 0
+    }
+  },
+  "policy": [
+    {
+      "name": "MemoizationPolicy"
+    },
+    {
+      "name": "KerasPolicy",
+      "param": {
+        "max_history": 5,
+        "epochs": 100
+      }
+    },
+    {
+      "name": "MappingPolicy"
+    }
+  ],
+  "data": [
+    {
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }
+  ]
+},
+  "keras_new_dialoges_multi_4_avg_20_ran_0": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 4,
+        "average_length": 20,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_4_avg_25_ran_0": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 4,
+        "average_length": 25,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_4_avg_30_ran_0": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 4,
+        "average_length": 30,
+        "random_switch": 0
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_1_avg_15_ran_5": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 1,
+        "average_length": 15,
+        "random_switch": 5
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_1_avg_15_ran_10": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 1,
+        "average_length": 15,
+        "random_switch": 10
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_1_avg_15_ran_15": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 1,
+        "average_length": 15,
+        "random_switch": 15
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_1_avg_15_ran_20": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 1,
+        "average_length": 15,
+        "random_switch": 20
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_new_dialoges_multi_1_avg_15_ran_25": {
+    "importer": {
+      "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+      "param": {
+        "multiplication": 1,
+        "average_length": 15,
+        "random_switch": 25
+      }
+    },
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      },
+      {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history": 5,
+          "epochs": 100
+        }
+      },
+      {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [
+      {
+        "name": "ted",
+        "domain": "ted_domain.yml",
+        "train": "data/ted_paper/train",
+        "test": "data/ted_paper/test"
+      }
+    ]
+  },
+  "keras_only": {
+    "policy": [
+      {
+        "name": "MemoizationPolicy"
+      }, {
+        "name": "KerasPolicy",
+        "param": {
+          "max_history" : 5,
+          "epochs": 100
+        }
+      }, {
+        "name": "MappingPolicy"
+      }
+    ],
+    "data": [{
+      "name": "ted",
+      "domain": "ted_domain.yml",
+      "train": "data/ted_paper/train",
+      "test": "data/ted_paper/test"
+    }, {
+      "name": "embedding",
+      "domain": "embedding_domain.yml",
+      "train": "data/embedding_paper/train",
+      "test": "data/embedding_paper/test"
+    }]
+  }
+}
