@@ -1,5 +1,5 @@
 #!/bin/bash
-while getopts d:t:e:c:n: option
+while getopts d:t:e:c:n:x: option
 do
 case "${option}"
 in
@@ -8,10 +8,11 @@ t) TRAIN=${OPTARG};;
 e) TEST=${OPTARG};;
 c) CONFIG=${OPTARG};;
 n) NAME=${OPTARG};;
+x) TESTCONFIG=${OPTARG};;
 esac
 done
 
-if [ \( -z "$DOMAIN" \) -o \( -z "$TRAIN" \) -o \( -z "$TEST" \) -o \( -z "$CONFIG" \) -o \( -z "$NAME" \) ]
+if [ \( -z "$DOMAIN" \) -o \( -z "$TRAIN" \) -o \( -z "$TEST" \) -o \( -z "$CONFIG" \) -o \( -z "$NAME" \) -o \( -z "$TESTCONFIG" \) ]
 then
   RED='\033[0;31m'
   NC='\033[0m' # No Color
@@ -24,15 +25,11 @@ res_file=$res_dir/test_result.txt
 train_file=$res_dir/train_result.txt
 mkdir $res_dir
 printf "Run with configurations\n\nDomain: $DOMAIN\nConfig: $CONFIG\nTrain-Data: $TRAIN\nTest-Data: $TEST\nName: $NAME" > $res_dir/input_values.txt
-cp $CONFIG ./results/$(date '+%Y%m%d_%H%M')$NAME/
+cp $CONFIG ./results/$(date '+%Y%m%d_%H%M')$NAME/config.yml
 printf "Start Train\n"
 rasa train --data $TRAIN -c $CONFIG -d $DOMAIN --out $res_dir
 printf "Start Test\n"
-rasa test core -s $TEST -m $res_dir --out $res_dir > $res_file 2>&1
-grep -v '%' $res_file | grep -v ' 0 ' | grep -v 'rasa' > $res_dir/tmp 2>&1
-mv $res_dir/tmp $res_file
-rasa test core -s $TRAIN -m $res_dir > $train_file 2>&1
-grep -v '%' $train_file | grep -v ' 0 ' | grep -v 'rasa' > $res_dir/tmp 2>&1
-mv $res_dir/tmp $train_file
+echo $res_dir
+python test.py -m $res_dir -t $TRAIN -e $TEST -c $TESTCONFIG -n $NAME -o $CONFIG
 printf "Test finished"
 
