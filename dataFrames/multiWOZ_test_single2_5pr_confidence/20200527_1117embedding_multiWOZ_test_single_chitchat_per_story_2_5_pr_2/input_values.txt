@@ -1,0 +1,7 @@
+Run with configurations
+
+Domain: data/multiWOZ_test/domain.yml
+Config: js/conf/multiWOZ_test_single_chitchat_per_story_2_5_pr_2_config.yml
+Train-Data: data/multiWOZ_test/train/stories-5_2.md
+Test-Data: data/multiWOZ_test/test
+Name: embedding_multiWOZ_test_single_chitchat_per_story_2_5_pr_2

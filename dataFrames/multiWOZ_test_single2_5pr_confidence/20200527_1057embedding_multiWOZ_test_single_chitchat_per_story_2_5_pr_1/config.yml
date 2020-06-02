@@ -1,11 +1,9 @@
 importers:
-  - name: "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter"
-    multiplication: 1
-    average_length: 15
-    random_switch: 35
+  - name: "importer.single_chitchat_importer.SingleChitchatImporter"
+    per_story: 2
+    each_n: 1
 
-# Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
+
 language: en
 pipeline:
   - name: WhitespaceTokenizer
@@ -22,11 +20,7 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
 
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
 policies:
-  - name: MemoizationPolicy
-  - name: KerasPolicy
+  - name: TEDPolicy
     max_history: 5
     epochs: 100
-  - name: MappingPolicy
