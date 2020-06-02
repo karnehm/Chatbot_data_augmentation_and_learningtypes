@@ -21,6 +21,26 @@ logger.setLevel(30)
 
 SAVE_MODEL_FILE_NAME = "rlted_policy"
 
+
+'''
+First Commit:
+
+    batch_size = 8
+    num_of_episodes = 20
+    timesteps_per_episode = 1000
+
+    precision: 0.6080
+    f1: 0.6131
+    accuracy: 0.6387
+    
+    
+Second Commit: Harmonic-Calculation sum 1/n
+    precision: 0.5852
+    f1: 0.5772
+    accuracy: 0.6295
+    
+'''
+
 class RLTEDPolicy(TEDPolicy):
     def train(
             self,
@@ -196,7 +216,7 @@ class TEDEnviroment:
         terminated = True
         if predicted_action == action:
             self.following_correct_steps += 1
-            reward = 1/self.following_correct_steps
+            reward = self.calc_harmonic(self.following_correct_steps)
             terminated = False
 
             if self.current_state_index >= len(self.possible_states_indexes):
@@ -208,6 +228,13 @@ class TEDEnviroment:
 
         next_state = self.get_current_state()
         return next_state, reward, terminated
+
+    def calc_harmonic(self, n):
+        x = 0
+        print(n)
+        for i in range(1, n + 1):
+            x += 1/i
+        return x
 
     def get_current_state(self):
         return self.get_states()[self.current_state_index]
