@@ -34,10 +34,15 @@ First Commit:
     accuracy: 0.6387
     
     
-Second Commit: Harmonic-Calculation sum 1/n
+Second Commit: Harmonic-Calculation sum 1/n Batch 8
     precision: 0.5852
     f1: 0.5772
     accuracy: 0.6295
+    
+3th Commit: Hamonic-Calculation Batch 32:
+    precision: 0.5738
+    f1: 0.5570
+    accuracy: 0.5896 
     
 '''
 
@@ -93,7 +98,7 @@ class RLTEDPolicy(TEDPolicy):
             batch_strategy=self.config[BATCH_STRATEGY],
         )
 
-        batch_size = 8
+        batch_size = 32
         num_of_episodes = 20
         timesteps_per_episode = 1000
 
