@@ -27,6 +27,7 @@ class TEDAgent:
 
     def alighn_target_model(self):
         self.q_network.set_weights(self.target_network.get_weights())
+        self.target_update_counter = 0
 
     def act(self, state, last_reward):
         if np.random.rand() <= self.epsilon: # or last_reward <= 0:
@@ -70,7 +71,7 @@ class TEDAgent:
 
         model_data = create_model_data(X, y)
         self.q_network.fit(model_data,
-                                1,
+                                5,
                                 32,
                                 self.config[EVAL_NUM_EXAMPLES],
                                 self.config[EVAL_NUM_EPOCHS],

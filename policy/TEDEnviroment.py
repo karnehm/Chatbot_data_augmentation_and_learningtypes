@@ -20,9 +20,17 @@ class TEDEnviroment:
         predicted_action = np.argmax(self.training_y[self.current_state_index])
         reward = 0
         terminated = True
+
         if predicted_action == action:
             self.following_correct_steps += 1
-            reward = self.calc_harmonic(self.following_correct_steps)
+
+            # Fester Reward über 1 verschlechtert das Ergebnis
+            # reward = 5
+
+            # reward = 1
+            reward = self.calc_reward_to_one(self.following_correct_steps)
+            #  Harmonische Reihe ändert am Ergebnis nichts
+            # reward = self.calc_harmonic(self.following_correct_steps)
             #reward = self.calc_euler(self.following_correct_steps)
             terminated = False
         else:
@@ -32,6 +40,7 @@ class TEDEnviroment:
             self.current_state_index = 0
         else:
             self.current_state_index += 1
+        print('index: ' + str(self.current_state_index))
         next_state = self.get_current_state()
         return next_state, reward, terminated
 
@@ -45,6 +54,12 @@ class TEDEnviroment:
         x = 0
         for i in range(1, n+1):
             x += 1/(i ** 2)
+        return x
+
+    def calc_reward_to_one(self, n):
+        x = 0
+        for i in range(1, n+1):
+            x += 1/(i + 1)
         return x
 
     def get_current_state(self):

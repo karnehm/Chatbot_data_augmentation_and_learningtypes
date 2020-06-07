@@ -69,7 +69,26 @@ Second Commit: Harmonic-Calculation sum 1/n Batch 8
                     macro avg       0.49      0.48      0.46       977
                  weighted avg       0.74      0.70      0.70       977
                  
-                     
+9th:
+    precision: 0.9386
+    f1: 0.8926
+    accuracy: 0.8926
+                    micro avg       0.90      0.89      0.90       977
+                    macro avg       0.95      0.85      0.87       977
+                 weighted avg       0.94      0.89      0.89       977
+ 10th:
+    precision: 0.5766
+    f1: 0.5941
+    accuracy: 0.6448                                  
+    
+11th: Reward = \sum^n_{i=1} 1/(n+1) 
+    precision: 0.9192
+    f1: 0.9037
+    accuracy: 0.8997
+                        micro avg       0.91      0.90      0.90       977
+                    macro avg       0.92      0.88      0.89       977
+                 weighted avg       0.92      0.90      0.90       977
+                 
 '''
 
 class RLTEDPolicy(TEDPolicy):
@@ -124,8 +143,7 @@ class RLTEDPolicy(TEDPolicy):
             batch_strategy=self.config[BATCH_STRATEGY],
         )
 
-        num_of_episodes = 200
-        timesteps_per_episode = 100
+        num_of_episodes = 300
 
         for e in range(0, num_of_episodes):
             # Reset the enviroment
@@ -137,7 +155,8 @@ class RLTEDPolicy(TEDPolicy):
             last_reward = 1
             terminated = False
             print('number of Episodes: ' + str(e))
-            while not terminated:
+            number_of_terminated = 0
+            while number_of_terminated < 5:
                 #for timestep in range(timesteps_per_episode):
                 # Run Action
                 action = self.agent.act(model_state, last_reward)
@@ -153,7 +172,7 @@ class RLTEDPolicy(TEDPolicy):
                 print(len(self.expirience_replay))
                 if len(self.expirience_replay) >= BATCH_SIZE and len(self.expirience_replay) > MIN_REPLAY_MEMORY_SIZE:
                     minibatch = random.sample(self.expirience_replay, BATCH_SIZE)
-                    self.agent.retrain(minibatch=minibatch, create_model_data=self._create_model_data, terminal_state=True)
+                    self.agent.retrain(minibatch=minibatch, create_model_data=self._create_model_data, terminal_state=terminated)
                     #self.expirience_replay.clear()
                 if terminated:
                     self.agent.alighn_target_model()
