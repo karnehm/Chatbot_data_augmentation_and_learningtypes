@@ -1,8 +1,8 @@
-from random import random
+import random
 from typing import Optional, Text, Union, List, Dict
 import numpy as np
 from rasa.core.interpreter import RegexInterpreter
-from rasa.core.training import StoryGraph
+from rasa.core.training.structures import StoryGraph
 from rasa.core.training.dsl import StoryFileReader
 
 from rasa.importers.rasa import RasaFileImporter

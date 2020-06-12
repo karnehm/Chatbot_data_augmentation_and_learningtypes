@@ -1,8 +1,8 @@
 intents:
-  - chitchat
+  - asdfwe
 
 responses:
-  utter_chitchat:
+  utter_asdfwe:
   - text: "Damit konnte ich dir leider nicht helfen"
 
 session_config:

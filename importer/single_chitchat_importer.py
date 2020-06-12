@@ -7,7 +7,6 @@ from rasa.core.exceptions import StoryParseError
 from rasa.core.interpreter import NaturalLanguageInterpreter, RegexInterpreter
 from rasa.core.training.dsl import StoryFileReader
 from rasa.core.training.structures import StoryGraph
-from rasa.importers import utils
 from rasa.importers.rasa import RasaFileImporter
 from rasa.nlu.training_data import TrainingData
 from rasa.utils.common import raise_warning
@@ -80,7 +79,7 @@ class SingleChitchatImporter(RasaFileImporter):
                 last_utter = story.events[index - 1]
 
             # Intent
-            intent = 'chitchat'
+            intent = 'asdfwe'
             parse_data = await interpreter.parse(intent)
             utterance = UserUttered(
                 intent, parse_data.get("intent"), parse_data.get("entities"), parse_data
@@ -97,7 +96,7 @@ class SingleChitchatImporter(RasaFileImporter):
             # Copyied at dsl.py
             # def add_event(self, event_name, parameters):
             parameters = {}
-            event_name = "utter_chitchat"
+            event_name = "utter_asdfwe"
             # add 'name' only if event is not a SlotSet,
             # because there might be a slot with slot_key='name'
             parameters["name"] = event_name
