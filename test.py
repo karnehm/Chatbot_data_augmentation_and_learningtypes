@@ -33,7 +33,7 @@ def main(argv):
     result_of_run['train'] = loop.run_until_complete(
         test_core(model=model, stories=train_data)
     )
-    with open(model + '/test_run.pkl', 'fb') as f:
+    with open(model + '/test_run.pkl', 'wb') as f:
         pickle.dump(result_of_run, f)
 
 
@@ -47,13 +47,13 @@ def initialize_values(argv):
     try:
         opts, args = getopt.getopt(argv, "m:h:t:e:c:n:o:")
     except getopt.GetoptError:
-        print('test.py -m <path/to/model/dir> -t <train/data> -e <test/data> -c <config.yml> -n <name-of-run>')
+        print('test.py -m <path/to/model/dir> -t <train/data> -e <test/data> -c <ted_config.yml> -n <name-of-run>')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-m':
             model = arg
         elif opt == '-h':
-            print('test.py -t <test/data> -e <train/data> -c <config.yml> -n <name-of-run>')
+            print('test.py -t <test/data> -e <train/data> -c <ted_config.yml> -n <name-of-run>')
             sys.exit()
         elif opt == "-t":
             train_data = arg
@@ -70,7 +70,6 @@ def initialize_values(argv):
 
 def get_importer(config):
     importer = {}
-    print(config)
     with open(config, 'r') as stream:
         data_loaded = yaml.safe_load(stream)
     try:

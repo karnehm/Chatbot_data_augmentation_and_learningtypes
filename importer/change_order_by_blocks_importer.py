@@ -26,6 +26,10 @@ def get_all_blocks(len_of_story, possible_indexes):
         len_of_story - 1  # End
     ]])
 
+    # If there are only 2 possible indexes, the number of dimensions will
+    # be 1 of blocks and for concatenation we need 2 dimensions
+    if (len(possible_indexes) == 2):
+        return np.concatenate(([blocks], block))
     return np.concatenate((blocks, block))
 
 
@@ -83,7 +87,11 @@ class ChangeOrderByBlocksImporter(RasaFileImporter):
             for story in story_steps:
                 possible_indexes = get_possible_indexes(story)
                 blocks = get_all_blocks(len(story.events), possible_indexes)
-                blocks = combine_blocks(blocks,number_of_blocks, len(story.events))
+
+                blocks = combine_blocks(blocks,
+                                        number_of_blocks=
+                                            (number_of_blocks if number_of_blocks <= len(blocks) else len(blocks)),
+                                        number_of_stories=len(story.events))
                 new_story = story.create_copy(True)
                 new_story.events = shuffle_blocks(new_story.events, blocks)
                 copy_story_steps.append(new_story)
