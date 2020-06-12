@@ -12,7 +12,9 @@ let run = fs.readFileSync(INPUT_FILE, 'utf-8')
 run = JSON.parse(run)
 
 let run_script = '#!/bin/bash\n';
+let run_counter = 0;
 for(let run_name in run['runs']) {
+    run_counter++;
     const config_name = `${run_name}_config.yml`;
     let config_file = ''
     const importer = run.runs[run_name].importer
@@ -36,6 +38,9 @@ for(let run_name in run['runs']) {
     const data = run.runs[run_name].data;
     for(let d of data) {
         run_script += `${RUN_TRAIN_TEST_PATH} -d ${d.domain} -c ${EXEC_FOLDER}/${CONFIG_FOLDER}/${config_name} -n ${d.name}_${run_name} -t ${d.train} -e ${d.test} -x ${run.test_config}\n`
+    }
+    if(run.send_mail) {
+        run_script += `echo 'It is done' | mail -s "RUN: '${run_name}' was ${run_counter} out of ${Object.keys(run['runs']).length}" ${run.email}\n`;
     }
 }
 fs.writeFileSync(`${SAVE_RUN_FOLDER}/${RUN_FILE_NAME}`, run_script)
