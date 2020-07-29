@@ -1,0 +1,179 @@
+{
+    "standard": {
+      "data": [
+        {
+          "name": "embedding_5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_5.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "embedding_25",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_25.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "embedding_100",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train",
+          "test": "data/embedding_paper/test"
+        }
+      ]
+    },
+  "intervalls": {
+      "data": [
+        {
+          "name": "stories_5-1",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_5-1.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_5-2",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_5-2.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_5-3",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_5-3.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_5-4",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_5-4.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_5-5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_5-5.md",
+          "test": "data/embedding_paper/test"
+        },
+{
+          "name": "stories_10-1",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_10-1.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_10-2",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_10-2.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_10-3",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_10-3.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_10-4",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_10-4.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_10-5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_10-5.md",
+          "test": "data/embedding_paper/test"
+        },
+{
+          "name": "stories_15-1",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_15-1.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_15-2",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_15-2.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_15-3",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_15-3.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_15-4",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_15-4.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_15-5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_15-5.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_20-1",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_20-1.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_20-2",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_20-2.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_20-3",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_20-3.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_20-4",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_20-4.md",
+          "test": "data/embedding_paper/test"
+        }, 
+        {
+          "name": "stories_20-5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_20-5.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_25-1",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_25-1.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_25-2",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_25-2.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_25-3",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_25-3.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "stories_25-4",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_25-4.md",
+          "test": "data/embedding_paper/test"
+        }, 
+        {
+          "name": "stories_25-5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/stories_25-5.md",
+          "test": "data/embedding_paper/test"
+        }
+        ]
+  }
+}
+

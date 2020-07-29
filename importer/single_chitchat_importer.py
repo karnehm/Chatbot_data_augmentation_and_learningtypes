@@ -43,9 +43,12 @@ class SingleChitchatImporter(RasaFileImporter):
             use_e2e,
             exclusion_percentage,
         )
-        story_steps_copy = story_steps.copy()
+        if self.helper.get_param('add_original', True):
+            story_steps_copy = story_steps.copy()
+        else:
+            story_steps_copy = list()
 
-        for copy_nr in range(self.helper.get_param('copys_per_story', 1)):
+        for copy_nr in range(self.helper.get_param('copies_per_story', 1)):
             indexes = self.helper.get_indexes(story_steps, copy_nr)
             for idx, story in enumerate(story_steps):
                 story = await self.add_chitchat_to_story(story.create_copy(True), domain, indexes[idx],
@@ -53,8 +56,6 @@ class SingleChitchatImporter(RasaFileImporter):
                 story_steps_copy.append(story)
         return StoryGraph(story_steps_copy)
 
-    async def get_nlu_data(self, language: Optional[Text] = "en") -> TrainingData:
-        return await super().get_nlu_data(language)
 
     async def get_domain(self) -> Domain:
         domain = await super().get_domain()

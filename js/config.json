@@ -1,303 +1,135 @@
-{ "test_config": "config.yml",
+{
+  "test_config": "ted_config.yml",
+  "send_mail": true,
+  "email": "dominic@karnehm.cloud",
   "runs": {
-    "ted_only": {
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
+    "rl_new_l30_m2_r0": {
+      "importer": {
+        "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+        "param": {
+          "multiplication": 2,
+          "story_length": 30,
+          "random_switch": 0,
+          "add_original": true
         }
-      ],
+      },
+        "policy": [
+          {
+
+            "name": "policy.rl_ted_policy.RLTEDPolicy",
+            "param": {
+              "max_history": 5,
+              "epochs": 100
+            }
+          }
+        ],
       "data": [
         {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
+          "name": "embedding_5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_5.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "embedding_25",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_25.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "embedding_100",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train",
+          "test": "data/embedding_paper/test"
         }
       ]
     },
-    "ted_multi_chitchat_per_story_1": {
+    "rl_new_l30_m3_r0": {
       "importer": {
-        "name": "importer.multi_chitchat_importer.MultiChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 1,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
+        "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+        "param": {
+          "multiplication": 3,
+          "story_length": 30,
+          "random_switch": 0,
+          "add_original": true
         }
-      ],
+      },
+        "policy": [
+          {
+
+            "name": "policy.rl_ted_policy.RLTEDPolicy",
+            "param": {
+              "max_history": 5,
+              "epochs": 100
+            }
+          }
+        ],
       "data": [
         {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
+          "name": "embedding_5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_5.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "embedding_25",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_25.md",
+          "test": "data/embedding_paper/test"
+        },
+        {
+          "name": "embedding_100",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train",
+          "test": "data/embedding_paper/test"
         }
       ]
     },
-    "ted_multi_chitchat_per_story_2": {
+    "rl_new_l30_m4_r0": {
       "importer": {
-        "name": "importer.multi_chitchat_importer.MultiChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 2,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
+        "name": "importer.create_new_dialoges_importer.CreateNewDialogesByGraphImporter",
+        "param": {
+          "multiplication": 4,
+          "story_length": 30,
+          "random_switch": 0,
+          "add_original": true
         }
-      ],
+      },
+        "policy": [
+          {
+
+            "name": "policy.rl_ted_policy.RLTEDPolicy",
+            "param": {
+              "max_history": 5,
+              "epochs": 100
+            }
+          }
+        ],
       "data": [
         {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_multi_chitchat_per_story_3": {
-      "importer": {
-        "name": "importer.multi_chitchat_importer.MultiChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 3,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
+          "name": "embedding_5",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_5.md",
+          "test": "data/embedding_paper/test"
+        },
         {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
+          "name": "embedding_25",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train_pr/embedding_25.md",
+          "test": "data/embedding_paper/test"
+        },
         {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_multi_chitchat_per_story_4": {
-      "importer": {
-        "name": "importer.multi_chitchat_importer.MultiChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 4,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
-        {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_multi_chitchat_per_story_5": {
-      "importer": {
-        "name": "importer.multi_chitchat_importer.MultiChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 5,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
-        {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_single_chitchat_per_story_1": {
-      "importer": {
-        "name": "importer.single_chitchat_importer.SingleChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 1,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
-        {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_single_chitchat_per_story_2": {
-      "importer": {
-        "name": "importer.single_chitchat_importer.SingleChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 2,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
-        {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_single_chitchat_per_story_3": {
-      "importer": {
-        "name": "importer.single_chitchat_importer.SingleChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 3,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
-        {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_single_chitchat_per_story_4": {
-      "importer": {
-        "name": "importer.single_chitchat_importer.SingleChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 4,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
-        {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
-        }
-      ]
-    },
-    "ted_single_chitchat_per_story_5": {
-      "importer": {
-        "name": "importer.single_chitchat_importer.SingleChitchatImporter",
-        "add_original_storys": true,
-        "consultation": true,
-        "per_story": 5,
-        "each_n": 1,
-        "copys_per_story": 1,
-        "shuffle": true
-      },
-      "policy": [
-        {
-          "name": "TEDPolicy",
-          "param": {
-            "max_history": 5,
-            "epochs": 100
-          }
-        }
-      ],
-      "data": [
-        {
-          "name": "embedding",
-          "domain": "data/multiWOZ_total_with_verify/domain.yml",
-          "train": "data/multiWOZ_total_with_verify/train",
-          "test": "data/multiWOZ_total_with_verify/test"
+          "name": "embedding_100",
+          "domain": "data/embedding_paper/domain.yml",
+          "train": "data/embedding_paper/train",
+          "test": "data/embedding_paper/test"
         }
       ]
     }
-  }
+
+
+     }
 }
+
+
+

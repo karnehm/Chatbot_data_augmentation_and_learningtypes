@@ -1,6 +1,6 @@
 ## Generated Story 6377256771280559561
 * request_hotel
-    - utter_ask_details
+    futter_ask_details
 * inform{"price": "mid-range", "enddate": "next week"}
     - slot{"price": "mid-range"}
     - slot{"enddate": "next week"}

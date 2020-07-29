@@ -3,7 +3,7 @@ from rasa.core.policies.ted_policy import TED
 from rasa.utils.tensorflow.constants import EVAL_NUM_EXAMPLES, EVAL_NUM_EPOCHS, BATCH_STRATEGY
 import numpy as np
 
-DISCOUNT = 0.99
+DISCOUNT = 0.0
 UPDATE_TARGET_EVERY = 5
 
 
@@ -19,18 +19,23 @@ class TEDAgent:
         self.gamma = 0.6
         self.epsilon = 0.05
         self.target_update_counter = 0
+        self.act_num = 0
 
         # Build networks
         self.q_network = self._build_model(model_data, config, featurizer, label_data)
         self.target_network = self._build_model(model_data, config, featurizer, label_data)
         self.alighn_target_model()
 
+    def epsilon_func(self, x):
+        return 0.1*1/np.log(x+2)
+
     def alighn_target_model(self):
         self.q_network.set_weights(self.target_network.get_weights())
         self.target_update_counter = 0
 
-    def act(self, state, last_reward):
-        if np.random.rand() <= self.epsilon: # or last_reward <= 0:
+    def act(self, state):
+        self.act_num += 1
+        if np.random.rand() <= self.epsilon_func(self.act_num): # or last_reward <= 0:
             return self.enviroment.get_random_action()
         else:
             output = self.q_network.predict(state)
@@ -94,5 +99,3 @@ class TEDAgent:
             isinstance(featurizer, MaxHistoryTrackerFeaturizer),
             label_data,
         )
-
-

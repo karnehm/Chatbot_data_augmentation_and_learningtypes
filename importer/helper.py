@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 
 from rasa.core.events import UserUttered, ActionExecuted, SlotSet
+import numpy as np
 
 
 def get_possible_indexes(story) -> List:
@@ -101,7 +102,7 @@ class ImportHelper:
     def get_indexes(self, stories, copy_nr):
         indexes = []
 
-        per_story = self.get_param('per_story')
+        per_story = np.array(range(self.get_param('per_story_down',1), self.get_param('per_story_top', 2) + 1))
         each_n = self.get_param('each_n', 1)
         shuffle = self.get_param('shuffle', False)
 
@@ -114,6 +115,7 @@ class ImportHelper:
             # Shuffle, if config set True
             if shuffle:
                 random.shuffle(story_indexes)
-            story_indexes = story_indexes[:per_story]
+            random.shuffle(per_story)
+            story_indexes = story_indexes[:per_story[0]]
             indexes.append(story_indexes)
         return indexes

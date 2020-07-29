@@ -801,7 +801,6 @@
     - utter_happy
 
 
-
 ## Generated Story 5854594747809472876
 * request_restaurant
     - utter_ask_details
@@ -909,7 +908,6 @@
 * affirm
     - utter_happy
 
-
 ## Generated Story 8415484272864759934
 * request_restaurant
     - utter_ask_details
@@ -945,7 +943,6 @@
 * affirm
     - utter_happy
 
-
 ## Generated Story 8816761424745395625
 * request_restaurant
     - utter_ask_details
@@ -979,7 +976,6 @@
 * affirm
     - utter_happy
 
-
 ## Generated Story 1074034796281423152
 * request_restaurant
     - utter_ask_details
@@ -1003,7 +999,6 @@
     - utter_suggest_restaurant
 * affirm
     - utter_happy
-
 
 ## Generated Story 5703123541088815095
 * request_restaurant
@@ -1034,7 +1029,6 @@
 * affirm
     - utter_happy
 
-
 ## Generated Story -1455208811812364750
 * request_restaurant
     - utter_ask_details
@@ -1059,7 +1053,6 @@
     - utter_suggest_restaurant
 * affirm
     - utter_happy        
-    
     
 ## Generated Story 6510365135677203478
 * request_hotel

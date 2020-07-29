@@ -28,7 +28,7 @@ def main(argv):
     result_of_run['policy'] = get_policies(config)
     loop = asyncio.get_event_loop()
     result_of_run['test'] = loop.run_until_complete(
-        test_core(model=model, stories=test_data)
+        test_core(model=model, stories=test_data, output=model)
     )
     result_of_run['train'] = loop.run_until_complete(
         test_core(model=model, stories=train_data)

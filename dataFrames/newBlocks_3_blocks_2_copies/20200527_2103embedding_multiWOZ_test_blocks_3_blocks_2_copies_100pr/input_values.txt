@@ -1,7 +1,0 @@
-Run with configurations
-
-Domain: data/multiWOZ_test/domain.yml
-Config: js/conf/multiWOZ_test_blocks_3_blocks_2_copies_100pr_config.yml
-Train-Data: data/multiWOZ_test/train/stories.md
-Test-Data: data/multiWOZ_test/test
-Name: embedding_multiWOZ_test_blocks_3_blocks_2_copies_100pr

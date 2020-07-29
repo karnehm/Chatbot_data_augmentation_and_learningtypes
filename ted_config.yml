@@ -15,6 +15,7 @@ pipeline:
     epochs: 100
 
 policies:
-  - name: TEDPolicy
+  - name: "policy.rl_ted_policy.RLTEDPolicy"
+ # - name: TEDPolicy
     max_history: 5
     epochs: 100

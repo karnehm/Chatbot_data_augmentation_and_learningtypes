@@ -27,8 +27,8 @@ class TEDEnviroment:
             # Fester Reward über 1 verschlechtert das Ergebnis
             # reward = 5
 
-            # reward = 1
-            reward = self.calc_reward_to_one(self.following_correct_steps)
+            reward = 1
+            #reward = self.calc_reward_to_one(self.following_correct_steps)
             #  Harmonische Reihe ändert am Ergebnis nichts
             # reward = self.calc_harmonic(self.following_correct_steps)
             #reward = self.calc_euler(self.following_correct_steps)

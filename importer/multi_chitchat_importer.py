@@ -29,14 +29,6 @@ class MultiChitchatImporter(RasaFileImporter):
         self.chitchat_nlu = None
         random.seed(4)
 
-    async def get_nlu_data(self, language: Optional[Text] = "en") -> TrainingData:
-        nlu = await super().get_nlu_data(language)
-        path = set()
-        path.add(self.helper.get_param("nlu_data_file","data/chitchat_nlu.md"))
-        self.chitchat_nlu = utils.training_data_from_paths(path, language)
-        nlu = nlu.merge(self.chitchat_nlu)
-        return nlu
-
     async def get_domain(self) -> Domain:
         domain = await super().get_domain()
         self.chitchat_domain = Domain.from_file(self.helper.get_param("domain_data_file", "data/chitchat_domain.yml"))
@@ -61,9 +53,10 @@ class MultiChitchatImporter(RasaFileImporter):
             exclusion_percentage,
         )
 
-        story_steps_copy = []
-        if(self.helper.get_param('add_original_storys', False)):
+        if self.helper.get_param('add_original', True):
             story_steps_copy = story_steps.copy()
+        else:
+            story_steps_copy = list()
 
 
         for copy_nr in range(self.helper.get_param('copys_per_story', 1)):
