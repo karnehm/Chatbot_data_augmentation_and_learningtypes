@@ -48,7 +48,7 @@ class CreateNewDialogesByGraphImporter(RasaFileImporter):
         number_of_storys = len(story_steps) * self.helper.get_param('multiplication', 1)
         story_length = self.helper.get_param('story_length', 10)
         probability_of_random_switch = self.helper.get_param('random_switch', 0) * 0.01
-        if self.helper.get_param('add_original', True):
+        if not self.helper.get_param('add_original', True):
             story_steps = []
 
         story_number = 0
