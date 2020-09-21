@@ -79,6 +79,8 @@ class CreateNewDialogesByGraphImporter(RasaFileImporter):
                 possible_next_interactions = self.get_next_events(current_interaction)
                 if len(possible_next_interactions) > 0 or possible_next_interactions == None:
                     current_interaction = random.choice(possible_next_interactions)
+                elif probability_of_random_switch > 0:
+                    current_interaction = random.choice(interactions)
                 else:
                     end_of_story = True
 
